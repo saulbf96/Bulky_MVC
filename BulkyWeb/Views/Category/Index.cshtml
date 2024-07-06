@@ -1,0 +1,50 @@
+﻿@using BulkyWeb.Domain.Entities;
+@model List<Category>
+
+
+
+
+<!-- Vista de categoria  viw razor empty-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category</title>
+    <!-- Aquí puedes agregar enlaces a hojas de estilo CSS, scripts de JavaScript, meta tags adicionales, etc. -->
+</head>
+
+<body>
+
+    <h1>Lista de Categorias</h1>
+    
+    <!--Aqui creamos la tabla  -->
+
+    <table class="table table-bordered tabletable-striped">
+        <thead>
+        <tr>
+            <th>
+                Nombre Categoria 
+            </th>
+            <th>
+                Orden de Visualización
+            </th>
+        </tr>
+        </thead>
+        <!--Aqui se mostraria los datos -->
+        <tbody>
+                @foreach (var obj in Model.OrderBy( u=> u.DisplayOrder))
+                {
+            <tr>
+                
+                <td>@obj.Name</td>
+                <td>
+                   @obj.DisplayOrder
+                </td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+</body>
+</html>
